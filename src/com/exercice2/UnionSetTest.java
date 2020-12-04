@@ -48,11 +48,26 @@ class UnionSetTest {
 
     @Test
     void testElementAt() {
-        for (int i = 1 ; i <= unionVector.size() ; i++) {
-            Integer chiffre = (Integer)unionVector.elementAt(i-1);
-            System.out.println("Valeur Vecteur: " + chiffre + " Valeur i: " + i);
-            assertTrue(chiffre.intValue() == i);
+        for (int i = 0 ; i < unionVector.size() ; i++) {
+            Integer chiffre = (Integer)unionVector.elementAt(i);
+            int valeurI = i + 1;
+            assertTrue(chiffre.intValue() == i+1);
+        }
+    }
+
+    @Test
+    void testRemoveElementAndCheckOrder(){
+        unionVector.remove(4); // valeur 5 dans le tableau
+        int i = 1;
+
+        for (Object valeur : unionVector) {
+            if(i != 4) {
+                assertTrue((int) valeur == i);
+                i++;
+            }
         }
 
     }
+
+
 }

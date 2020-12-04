@@ -1,4 +1,4 @@
-package com.exercice;
+package com.exercice1;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package com.exercice;
+package com.exercice1;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

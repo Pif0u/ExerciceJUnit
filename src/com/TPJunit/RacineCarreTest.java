@@ -4,41 +4,49 @@ import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 import java.util.Hashtable;
+import java.util.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class RacineCarreTest {
+    private RacineCarre test;
+
+    @BeforeAll
+    void setUp() {
+        test = new RacineCarre();
+    }
 
     @AfterAll
-    public void tearDown(){
-
+    void tearDown()
+    {
+        test = null;
     }
 
     @Test
     void testExceptionNombreNegatif() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            RacineCarre.racineCarre(-10, 5);
+            test.racineCarre(-10, 5);
         });
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            RacineCarre.racineCarre(-10, -5);
+            test.racineCarre(-10, -5);
         });
     }
 
     @Test
     void testExceptionOrdreIntervalle() {
         // Bon ordre
-        RacineCarre.racineCarre(5, 10);
+        test.racineCarre(5, 10);
 
         // Mauvais ordre
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            RacineCarre.racineCarre(10, 5);
+            test.racineCarre(10, 5);
         });
     }
 
     @Test
     void testValeursCorrectes() {
-        Hashtable tableau = RacineCarre.racineCarre(1,100);
+        Hashtable tableau = test.racineCarre(1,100);
 
         /**
          * Expected = résultat de la raciné carré
@@ -54,7 +62,7 @@ class RacineCarreTest {
     void testTempsExecution() {
         // Si l'execution prend plus de 5 secondes, erreur
         assertTimeoutPreemptively(Duration.ofMillis(5000), () -> {
-            Hashtable tableau = RacineCarre.racineCarre(1,10000);
+            Hashtable tableau = test.racineCarre(1,10000);
         });
     }
 }

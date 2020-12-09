@@ -3,8 +3,6 @@ package com.exercice2;
 import java.util.Vector;
 
 public class UnionSet {
-    private Vector v1;
-    private Vector v2;
 
     /**
      *

@@ -6,6 +6,13 @@ import java.util.Hashtable;
 public class RacineCarre {
 
 
+    /**
+     * Fonction qui permet de calculer les racines carrées dans un intervalle donné
+     * @param v1 intervalle de début de calcul des racines carrées
+     * @param v2 intervalle de fin de calcul des racines carrées
+     * @return Hashtable (tableau clé/valeur) avec comme clé un nombre et comme
+     *          valeur la racine carré de ce nombre
+     */
     public static Hashtable<Integer, Double> racineCarre(Integer v1, Integer v2) {
 
         /**

@@ -2,6 +2,7 @@ package com.TPJunit;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Duration;
 import java.util.Hashtable;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -49,5 +50,11 @@ class RacineCarreTest {
         assertEquals(10.0, tableau.get(100));
     }
 
-
+    @Test
+    void testTempsExecution() {
+        // Si l'execution prend plus de 5 secondes, erreur
+        assertTimeoutPreemptively(Duration.ofMillis(5000), () -> {
+            Hashtable tableau = RacineCarre.racineCarre(1,10000);
+        });
+    }
 }

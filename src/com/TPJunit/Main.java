@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Hashtable result = RacineCarre.racineCarre(10, 5);
+        Hashtable result = RacineCarre.racineCarre(5,100);
 
         result.forEach((k, v) ->
         {

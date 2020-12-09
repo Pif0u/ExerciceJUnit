@@ -28,13 +28,13 @@ class RacineCarreTest {
     void testExceptionNombreNegatif() {
         assertThrows(IllegalArgumentException.class, () -> {
             RacineCarre.racineCarre(-10, 5);
-        },"A négatif mais la fonction ne renvoie pas IllegalArgumentException");
+        },"A négatif mais la fonction renvoie IllegalArgumentException");
         assertThrows(IllegalArgumentException.class, () -> {
             RacineCarre.racineCarre(10, -5);
-        },"b négatif mais la fonction ne renvoie pas IllegalArgumentException");
+        },"b négatif mais la fonction renvoie pas IllegalArgumentException");
         assertThrows(IllegalArgumentException.class, () -> {
             RacineCarre.racineCarre(-10, -5);
-        },"a et b négatifs mais la fonction ne renvoie pas IllegalArgumentException");
+        },"a et b négatifs mais la fonction renvoie pas IllegalArgumentException");
     }
 
     @Test

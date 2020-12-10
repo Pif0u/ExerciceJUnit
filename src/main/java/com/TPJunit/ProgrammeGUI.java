@@ -21,19 +21,24 @@ public class ProgrammeGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Hashtable result = RacineCarre.racineCarre(Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
 
-                DefaultTableModel dtm = new DefaultTableModel();
-                String header[] = new String[] { "Nombre", "Racine carré"};
-                dtm.setColumnIdentifiers(header);
+                try {
+                    Hashtable result = RacineCarre.racineCarre(Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
+
+                    DefaultTableModel dtm = new DefaultTableModel();
+                    String header[] = new String[]{"Nombre", "Racine carré"};
+                    dtm.setColumnIdentifiers(header);
 
 
-                result.forEach((k, v) ->
-                {
-                    dtm.addRow(new Object[]{k, v});
-                });
+                    result.forEach((k, v) ->
+                    {
+                        dtm.addRow(new Object[]{k, v});
+                    });
 
-                table1.setModel(dtm);
+                    table1.setModel(dtm);
+                } catch (IllegalArgumentException e1) {
+                    JOptionPane.showMessageDialog(null, e1.getMessage(), "Erreur", JOptionPane.INFORMATION_MESSAGE);
+                }
 
             }
         });

@@ -16,6 +16,7 @@ public class ProgrammeGUI {
     private JPanel panel1;
 
     public ProgrammeGUI() {
+
         calculerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

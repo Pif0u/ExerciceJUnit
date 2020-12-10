@@ -19,7 +19,7 @@ public class RacineCarre {
          * On vérifie si les deux paramètres sont des nombres positif ou nul
          */
         if(v1 < 0 || v2 < 0) {
-            throw new IllegalArgumentException("Erreur : Nombre nulle ou positive seulement");
+            throw new IllegalArgumentException("Erreur : Nombre nul ou positif seulement");
         }
 
         /**
